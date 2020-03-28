@@ -37,20 +37,12 @@ export const colors = {
   border: lightGrey,
   headerBg: dark,
   headerColor: light,
-  headerColorHover: accentDark,
   footerBg: dark,
   footerColor: light,
-  infoBg: darken(0.02, light),
   cardBg: light2,
-  archiveTitleBg: grey,
-  searchResultsHeaderBg: grey,
-  searchResultsHeaderColor: "white",
   highlightColor: accentDark,
-  searchColor: grey,
-  slideSidebarBg: dark,
   focusOutline: grey,
   mobileMenuBg: dark,
-
   modes: {
     dark: {
       text: light,
@@ -58,9 +50,6 @@ export const colors = {
       cardBg: dark2,
       headerBg: dark3,
       footerBg: dark3,
-      infoBg: dark3,
-      archiveTitleBg: secondary,
-      searchColor: primary,
       accent: accentDark
     }
   }

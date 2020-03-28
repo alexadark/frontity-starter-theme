@@ -1,16 +1,18 @@
 {
   "name": "frontity-starter-theme",
   "version": "0.0.1",
-  "description": "A starter theme for Frontity",
+  "description": "A starter theme for Frontity, styled with theme-ui, and with dark mode",
   "keywords": [
     "frontity",
-    "frontity-theme"
+    "frontity-theme",
+    "theme-ui",
+    "dark-mode"
   ],
   "homepage": "https://frontity.org",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/frontity/frontity.git"
+    "url": "https://github.com/alexadark/frontity-starter-theme"
   },
   "bugs": {
     "url": "https://community.frontity.org"

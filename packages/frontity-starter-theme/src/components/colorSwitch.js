@@ -1,10 +1,14 @@
 /** @jsx jsx */
 import { jsx, useColorMode, Box } from "theme-ui";
+import { useEffect } from "react";
 
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const ColorSwitch = ({ ...props }) => {
-  const [colorMode, setColorMode] = useColorMode();
+  const [colorMode, setColorMode] = useColorMode("dark");
+  // useEffect(() => {
+  //   setColorMode("dark");
+  // });
 
   const Icon =
     colorMode === "dark" ? (

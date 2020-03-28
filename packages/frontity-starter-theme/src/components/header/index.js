@@ -19,7 +19,10 @@ const Header = ({ state }) => {
               direction="row"
               sx={{
                 display: ["none", "none", "block"],
-                ".menu-item": { px: 10 }
+                ".menu-item": { px: 10 },
+                a: {
+                  color: "light"
+                }
               }}
             />
             <MobileMenu sx={{ display: ["block", "block", "none"] }} />

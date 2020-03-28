@@ -43,7 +43,9 @@ const Post = ({ state, libraries, actions }) => {
 
   return data.isReady ? (
     <Container className="container" sx={{ maxWidth: "l" }}>
-      <article sx={{ variant: "card.default" }}>
+      <article
+        sx={{ variant: "card.default", "div figure": { maxWidth: 804, mx: 0 } }}
+      >
         {featured.showOnPost && (
           <PostEntryMedia
             id={featured_media.id}
