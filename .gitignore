@@ -1,7 +1,7 @@
 # Ignore everything:
 node_modules
 build
-.now
+now
 packages/frontity-chakra-theme
 packages/mars-theme
 packages/twentynineteen-theme
