@@ -49,11 +49,7 @@ export const colors = {
   searchColor: grey,
   slideSidebarBg: dark,
   focusOutline: grey,
-  nlInputBg: light,
-  nlInputColor: dark,
-  nlButtonBg: primary,
-  nlButtonBgHover: darken(0.1, primary),
-  nlButtonColor: light,
+  mobileMenuBg: dark,
 
   modes: {
     dark: {
@@ -65,11 +61,7 @@ export const colors = {
       infoBg: dark3,
       archiveTitleBg: secondary,
       searchColor: primary,
-      accent: accentDark,
-      nlInputBg: lighten(0.05, dark),
-      nlInputColor: light,
-      nlButtonBg: secondary,
-      nlButtonBgHover: darken(0.05, secondary)
+      accent: accentDark
     }
   }
 };

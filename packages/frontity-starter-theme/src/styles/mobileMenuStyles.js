@@ -13,7 +13,7 @@ export default {
   display: "flex",
   overflowY: "scroll",
   boxShadow: ["none", "-10px 0 40px rgba(0,0,0,0.3)"],
-  animationDuration: "1s",
+  animationDuration: ".6s",
 
   p: "xl",
   "&.menu-closing": {
