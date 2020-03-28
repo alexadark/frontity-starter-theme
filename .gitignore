@@ -1,0 +1,8 @@
+# Ignore everything:
+node_modules
+build
+.now
+packages/frontity-chakra-theme
+packages/mars-theme
+packages/twentynineteen-theme
+packages/twentytwenty-theme
