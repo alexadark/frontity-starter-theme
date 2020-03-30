@@ -1,17 +1,10 @@
 import { colors, buttons, text, card, header, footer } from "./components";
-import {
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  base
-} from "./components/typo";
+import { fonts, fontSizes, lineHeights, base } from "./components/typo";
 
 export default {
   colors,
   fonts,
   fontSizes,
-  fontWeights,
   lineHeights,
   text,
   buttons,
