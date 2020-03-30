@@ -2,6 +2,7 @@
 import { jsx, Flex, ThemeProvider } from "theme-ui";
 import theme from "../theme-ui";
 import { Global, connect, Head } from "frontity";
+import Switch from "@frontity/components/switch";
 import FontFace from "../styles/fontFace";
 import globalStyles from "../styles/globalStyles";
 import Header from "./header";
@@ -10,7 +11,6 @@ import Archive from "./archive";
 import Loading from "./loading";
 import Page404 from "./page404";
 import Post from "./post";
-
 import { getUrlData } from "../helpers";
 import Title from "./title";
 import { Grommet } from "grommet";
@@ -44,10 +44,12 @@ const Theme = ({ state }) => {
               py: ["xl", "xl", "xxl"]
             }}
           >
-            {isFetching && <Loading />}
-            {is404 && state.router.link !== "/test/" && <Page404 />}
-            {isPostType && <Post />}
-            {isArchive && <Archive />}
+            <Switch>
+              <Archive when={isArchive} />
+              <Post when={isPostType} />
+              <Loading when={isFetching} />
+              <Page404 />
+            </Switch>
           </main>
           <Footer />
         </Flex>
