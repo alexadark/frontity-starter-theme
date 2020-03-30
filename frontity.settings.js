@@ -28,7 +28,7 @@ const settings = {
           },
           socialLinks: [
             ["pinterest", "https://www.pinterest.com/frontity/"],
-            ["facebook", "https://www.instagram.com/frontity/"],
+            ["facebook", "https://www.facebook.com/frontity/"],
             ["twitter", "https://www.twitter.com/frontity/"],
             ["instagram", "https://www.instagram.com/frontity/"]
           ],
