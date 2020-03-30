@@ -14,7 +14,6 @@ import Archive from "../archive";
 
 const Post = ({ state, libraries, actions }) => {
   const data = getUrlData(state);
-  console.log("pageData", data);
   const post = state.source[data.type][data.id];
 
   const { postMeta, postInfo, featured } = state.theme;

@@ -18,7 +18,6 @@ const icons = {
 
 const SocialShare = ({ state, ...props }) => {
   const { socialLinks } = state.theme;
-  console.log("social", socialLinks);
   return (
     <Flex sx={{ justifyContent: "center" }} {...props}>
       {socialLinks &&
