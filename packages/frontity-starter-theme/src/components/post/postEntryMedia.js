@@ -4,7 +4,15 @@ import { connect } from "frontity";
 import { getMediaAttributes } from "../../helpers";
 import Image from "@frontity/components/image";
 
-function PostEntryMedia({ state, actions, libraries, id, ratio, ...props }) {
+function PostEntryMedia({
+  state,
+  actions,
+  libraries,
+  id,
+  ratio,
+  getSnapshot,
+  ...props
+}) {
   const imgProps = getMediaAttributes(state, id);
   // is empty if the id doesn't exist in state.source anymore
   const noImgProps = Object.keys(imgProps).length === 0;
