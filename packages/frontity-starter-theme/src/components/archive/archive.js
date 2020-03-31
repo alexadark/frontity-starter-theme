@@ -43,7 +43,6 @@ const Archive = ({ state }) => {
       )}
       {data.items.map(({ id, type }) => {
         const item = state.source[type][id];
-        console.log("item", item);
         return <ArchiveItem key={item.id} item={item} type={data.type} />;
       })}
       <Pagination />
