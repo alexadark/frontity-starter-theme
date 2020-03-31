@@ -2,18 +2,17 @@
 import { jsx, Flex, Box } from "theme-ui";
 import React from "react";
 import { connect } from "frontity";
-import {
-  IoLogoTwitter,
-  IoLogoPinterest,
-  IoLogoFacebook,
-  IoLogoInstagram
-} from "react-icons/io";
+import { Icon } from "react-icons-kit";
+import { socialTwitter } from "react-icons-kit/ionicons/socialTwitter";
+import { socialPinterest } from "react-icons-kit/ionicons/socialPinterest";
+import { socialFacebook } from "react-icons-kit/ionicons/socialFacebook";
+import { socialInstagram } from "react-icons-kit/ionicons/socialInstagram";
 
 const icons = {
-  twitter: IoLogoTwitter,
-  pinterest: IoLogoPinterest,
-  facebook: IoLogoFacebook,
-  instagram: IoLogoInstagram
+  twitter: socialTwitter,
+  pinterest: socialPinterest,
+  facebook: socialFacebook,
+  instagram: socialInstagram
 };
 
 const SocialShare = ({ state, ...props }) => {
@@ -26,7 +25,7 @@ const SocialShare = ({ state, ...props }) => {
           return (
             <Box key={i} sx={{ mx: 5 }}>
               <a href={link} target="_blank" rel="noopener noreferrer">
-                <Box as={socialIcon} />
+                <Icon size={24} icon={socialIcon} />
               </a>
             </Box>
           );
