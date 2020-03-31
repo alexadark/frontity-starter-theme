@@ -1,35 +1,24 @@
 /** @jsx jsx */
 import { jsx, useColorMode, Box } from "theme-ui";
-import { useEffect } from "react";
-
-import { FiSun, FiMoon } from "react-icons/fi";
+import { Icon } from "react-icons-kit";
+import { iosSunny as sun } from "react-icons-kit/ionicons/iosSunny";
+import { iosMoon as moon } from "react-icons-kit/ionicons/iosMoon";
+import Switch from "@frontity/components/switch";
 
 const ColorSwitch = ({ ...props }) => {
   const [colorMode, setColorMode] = useColorMode("dark");
-  // useEffect(() => {
-  //   setColorMode("dark");
-  // });
 
-  const Icon =
-    colorMode === "dark" ? (
-      <FiSun sx={{ width: `24px`, height: `24px`, strokeWidth: 1, mt: -2 }} />
-    ) : (
-      <FiMoon
-        sx={{
-          width: `24px`,
-          height: `24px`,
-          strokeWidth: 1,
-          svg: { stroke: `accent`, fill: `accent` },
-          mt: -5
-        }}
-      />
-    );
   return (
     <Box
       onClick={() => setColorMode(colorMode === "default" ? "dark" : "default")}
       {...props}
     >
-      {Icon}
+      <Box sx={{ color: "light", mt: -7, cursor: "pointer" }}>
+        <Switch>
+          <Icon size={36} icon={sun} when={colorMode === "dark"} />
+          <Icon size={36} icon={moon} />
+        </Switch>
+      </Box>
     </Box>
   );
 };
