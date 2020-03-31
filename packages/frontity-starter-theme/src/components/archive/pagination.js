@@ -38,7 +38,7 @@ const Pagination = ({ state, actions, libraries }) => {
   useEffect(() => {
     if (isThereNextPage) actions.source.fetch(nextPageLink);
   }, []);
-  if (totalPages <= 1) return;
+  if (totalPages <= 1) return null;
 
   return (
     <Container sx={{ ...paginationStyles }}>
