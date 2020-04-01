@@ -1,6 +1,6 @@
-export const buildUrl = (libraries, path, page, query) =>
+export const buildUrl = (libraries, route, page, query) =>
   libraries.source.stringify({
-    path,
+    route,
     page,
     query
   });

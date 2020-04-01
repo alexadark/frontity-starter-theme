@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Flex, Box } from "theme-ui";
-import React from "react";
 import { connect } from "frontity";
 import { Icon } from "react-icons-kit";
 import { socialTwitter } from "react-icons-kit/ionicons/socialTwitter";

@@ -39,7 +39,9 @@ const ArchiveItem = ({ item, state, type }) => {
           )}
           <h2
             dangerouslySetInnerHTML={{ __html: title }}
-            sx={{ textTransform: "uppercase" }}
+            sx={{
+              textTransform: "uppercase"
+            }}
           />
         </Link>
         {postInfo.showOnArchive && type !== "projects" && (
