@@ -17,34 +17,23 @@ import paginationStyles from "../../styles/paginationStyles";
  */
 const Pagination = ({ state, actions, libraries }) => {
   // Get the total posts to be displayed based for the current link
-  const { totalPages } = getUrlData(state);
-
-  const { path, page, query } = libraries.source.parse(state.router.link);
-
-  // Check if we can go to next page within the pagination
-  const isThereNextPage = page < totalPages;
-
-  // Check if we can go to previous page within the pagination
-  const isTherePreviousPage = page > 1;
-
-  // Get the link for the next page
-  const nextPageLink = buildUrl(libraries, path, page + 1, query);
-
-  // Get the link for the previous page
-  const prevPageLink = buildUrl(libraries, path, page - 1, query);
+  const { totalPages, next, previous } = getUrlData(state);
+  const { route, query } = libraries.source.parse(state.router.link);
   const isActive = i => state.router.link.includes(i + 1);
 
   // Pre-fetch the the next page if it hasn't been fetched yet.
   useEffect(() => {
-    if (isThereNextPage) actions.source.fetch(nextPageLink);
+    if (next) actions.source.fetch(next);
   }, []);
-  if (totalPages <= 1) return;
+
+  // Don't use pagination if there's only 1 page.
+  if (totalPages <= 1) return null;
 
   return (
     <Container sx={{ ...paginationStyles }}>
       {/* If there's a previous page, render this link */}
-      {isTherePreviousPage ? (
-        <Link className="prevLink link" link={prevPageLink}>
+      {previous ? (
+        <Link className="prevLink link" link={previous}>
           <span>Previous</span>
         </Link>
       ) : (
@@ -53,20 +42,24 @@ const Pagination = ({ state, actions, libraries }) => {
 
       <Nav direction="row" className="pageNumbers">
         {totalPages > 1 &&
-          Array.from({ length: totalPages }, (_, i) => (
-            <Link
-              key={`pagination-number${i + 1}`}
-              link={i === 0 ? path : buildUrl(libraries, path, i + 1, query)}
-              className={isActive(i) ? "active" : null}
-            >
-              <Flex className="number">{i + 1}</Flex>
-            </Link>
-          ))}
+          Array.from({ length: totalPages }, (_, i) => {
+            return (
+              <Link
+                key={`pagination-number${i + 1}`}
+                link={
+                  i === 0 ? route : buildUrl(libraries, route, i + 1, query)
+                }
+                className={isActive(i) ? "active" : null}
+              >
+                <Flex className="number">{i + 1}</Flex>
+              </Link>
+            );
+          })}
       </Nav>
 
       {/* If there's a next page, render this link */}
-      {isThereNextPage ? (
-        <Link className="nextLink link" link={nextPageLink}>
+      {next ? (
+        <Link className="nextLink link" link={next}>
           <span>Next</span>
         </Link>
       ) : (
