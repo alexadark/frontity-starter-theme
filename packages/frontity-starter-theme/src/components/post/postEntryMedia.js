@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Box, AspectRatio } from "theme-ui";
+import { jsx, AspectRatio } from "theme-ui";
 import { connect } from "frontity";
 import { getMediaAttributes } from "../../helpers";
 import Image from "@frontity/components/image";
