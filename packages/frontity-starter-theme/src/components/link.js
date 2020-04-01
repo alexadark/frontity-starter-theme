@@ -8,8 +8,7 @@ const Link = ({
   className,
   children,
   rel,
-  "aria-current": ariaCurrent,
-  onClick: onClickProp
+  "aria-current": ariaCurrent
 }) => {
   // Check if the link is an external or internal link.
   const isExternal = link.startsWith("http");

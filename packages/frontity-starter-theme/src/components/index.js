@@ -18,7 +18,7 @@ import { Grommet } from "grommet";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = getUrlData(state);
-  const { isFetching, isPostType, isArchive, is404 } = data;
+  const { isFetching, isPostType, isArchive } = data;
 
   return (
     <Grommet theme={theme}>

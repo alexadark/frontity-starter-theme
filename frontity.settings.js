@@ -19,8 +19,9 @@ const settings = {
             ["Japan", "/tag/japan/"],
             ["About Us", "/about-us/"]
           ],
-          logo:
-            "https://demo-wp.alexaspalato.website/wp-content/uploads/2020/02/logo.svg",
+          // logo:
+          //   "https://demo-wp.alexaspalato.website/wp-content/uploads/2020/02/logo.svg",
+          logo: "Frontity",
           autoPreFetch: "hover",
           showSocialLinks: {
             header: false,
