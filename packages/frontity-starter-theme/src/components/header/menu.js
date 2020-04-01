@@ -1,7 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, NnavLink } from "theme-ui";
-import React from "react";
-import { Nav } from "grommet";
+import { jsx, Flex } from "theme-ui";
 import { connect } from "frontity";
 import Link from "../link";
 
