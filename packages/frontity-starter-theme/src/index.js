@@ -4,7 +4,7 @@ import image from "@frontity/html2react/processors/image";
 const starterTheme = {
   name: "frontity-starter-theme",
   roots: {
-    theme: Theme
+    theme: Theme,
   },
   state: {
     theme: {
@@ -18,24 +18,25 @@ const starterTheme = {
       // logo: Logo,
       showSocialLinks: {
         header: true,
-        footer: true
+        footer: true,
       },
       socialLinks: [],
       isMobileMenuOpen: false,
+      isSearchModalOpen: false,
       autoPreFetch: "none",
       featured: {
         showOnArchive: true,
-        showOnPost: true
+        showOnPost: true,
       },
       postInfo: {
         showOnArchive: true,
-        showOnPost: true
+        showOnPost: true,
       },
       postMeta: {
         showOnArchive: true,
-        showOnPost: true
-      }
-    }
+        showOnPost: true,
+      },
+    },
   },
   actions: {
     theme: {
@@ -44,14 +45,20 @@ const starterTheme = {
       },
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
-      }
-    }
+      },
+      openSearchModal: ({ state }) => {
+        state.theme.isSearchModalOpen = true;
+      },
+      closeSearchModal: ({ state }) => {
+        state.theme.isSearchModalOpen = false;
+      },
+    },
   },
   libraries: {
     html2react: {
-      processors: [image]
-    }
-  }
+      processors: [image],
+    },
+  },
 };
 
 export default starterTheme;

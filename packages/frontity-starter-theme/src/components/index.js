@@ -13,12 +13,14 @@ import Page404 from "./page404";
 import Post from "./post";
 import { getUrlData } from "../helpers";
 import Title from "./title";
+import SearchResults from "./search/searchResults";
 import { Grommet } from "grommet";
 
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = getUrlData(state);
-  const { isFetching, isPostType, isArchive } = data;
+  console.log("index data", data);
+  const { isFetching, isPostType, isArchive, isSearch } = data;
 
   return (
     <Grommet theme={theme}>
@@ -34,19 +36,20 @@ const Theme = ({ state }) => {
           sx={{
             flexDirection: "column",
             justifyContent: "space-between",
-            minHeight: "100vh"
+            minHeight: "100vh",
           }}
         >
           <Header />
           <main
             sx={{
-              py: ["xl", "xl", "xxl"]
+              py: ["xl", "xl", "xxl"],
             }}
           >
             <Switch>
+              <Loading when={isFetching} />
+              <SearchResults when={isSearch} />
               <Archive when={isArchive} />
               <Post when={isPostType} />
-              <Loading when={isFetching} />
               <Page404 />
             </Switch>
           </main>

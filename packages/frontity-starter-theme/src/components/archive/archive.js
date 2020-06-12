@@ -7,7 +7,7 @@ import ArchiveItem from "./archiveItem";
 import Pagination from "./pagination";
 import { getUrlData } from "../../helpers";
 
-const Archive = ({ state }) => {
+const Archive = ({ state, showMedia }) => {
   const data = getUrlData(state);
   const author = state.source.author[data.id];
 
@@ -20,7 +20,7 @@ const Archive = ({ state }) => {
             textAlign: "center",
             textTransform: "uppercase",
             letterSpacing: 1.2,
-            mb: 30
+            mb: 30,
           }}
         >
           {data.taxonomy}: {state.source[data.taxonomy][data.id].name}
@@ -43,7 +43,14 @@ const Archive = ({ state }) => {
       )}
       {data.items.map(({ id, type }) => {
         const item = state.source[type][id];
-        return <ArchiveItem key={item.id} item={item} type={data.type} />;
+        return (
+          <ArchiveItem
+            key={item.id}
+            item={item}
+            type={data.type}
+            showMedia={showMedia}
+          />
+        );
       })}
       <Pagination />
     </>

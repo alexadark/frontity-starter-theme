@@ -8,7 +8,7 @@ import { formatPostData } from "../../helpers";
 import PostEntryMedia from "../post/postEntryMedia";
 import featuredStyles from "../../styles/featuredStyles";
 
-const ArchiveItem = ({ item, state, type }) => {
+const ArchiveItem = ({ item, state, type, showMedia = true }) => {
   const { postInfo, postMeta, featured } = state.theme;
 
   const {
@@ -21,7 +21,6 @@ const ArchiveItem = ({ item, state, type }) => {
     tags,
     featured_media,
     excerpt,
-    acf
   } = formatPostData(state, item);
   const date = new Date(publishDate);
 
@@ -29,7 +28,7 @@ const ArchiveItem = ({ item, state, type }) => {
     <Container sx={{ maxWidth: "l", mb: "xl" }}>
       <article className="entry" sx={{ variant: "card.default" }}>
         <Link link={link}>
-          {featured.showOnArchive && (
+          {featured.showOnArchive && showMedia && (
             <PostEntryMedia
               className="entryMedia"
               id={featured_media.id}
@@ -40,11 +39,11 @@ const ArchiveItem = ({ item, state, type }) => {
           <h2
             dangerouslySetInnerHTML={{ __html: title }}
             sx={{
-              textTransform: "uppercase"
+              textTransform: "uppercase",
             }}
           />
         </Link>
-        {postInfo.showOnArchive && type !== "projects" && (
+        {postInfo.showOnArchive && (
           <PostEntryInfo author={author} date={date} />
         )}
         {item.excerpt && (
@@ -53,15 +52,8 @@ const ArchiveItem = ({ item, state, type }) => {
             dangerouslySetInnerHTML={{ __html: excerpt }}
           />
         )}
-        {type === "projects" && (
-          <h4>
-            <a href={acf.project_url} target="_blank">
-              View project
-            </a>
-          </h4>
-        )}
 
-        {postMeta.showOnArchive && type !== "projects" && (
+        {postMeta.showOnArchive && (
           <div className="postEntryMeta">
             <Taxonomies tax={categories} name="Categories" />
             <Taxonomies tax={tags} name="Tags" />
