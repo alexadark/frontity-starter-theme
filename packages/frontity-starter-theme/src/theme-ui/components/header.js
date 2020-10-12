@@ -2,7 +2,7 @@ export const header = {
   bg: 'headerBg',
   color: 'headerColor',
   fontWeight: 'bold',
-  margin: 'none',
+  margin: 0,
   boxShadow: 'small',
   '.container': {
     display: ['flex'],
